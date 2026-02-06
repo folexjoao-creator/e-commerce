@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Cabeçalho -->
     <header class="cabecalho">
@@ -17,7 +19,7 @@
                     <span>TechStore</span>
                 </a>
             </div>
-            
+
             <nav class="navegacao">
                 <ul>
                     <li><a href="index.html" class="ativo">Início</a></li>
@@ -27,31 +29,31 @@
                     <li><a href="#">Contato</a></li>
                 </ul>
             </nav>
-            
+
             <div class="acoes-cabecalho">
                 <button class="btn-icone" id="alternarTema" aria-label="Alternar tema">
                     <i class="fas fa-moon"></i>
                 </button>
-                
+
                 <div class="busca">
                     <input type="text" placeholder="Buscar produtos..." id="campoBusca">
                     <button class="btn-busca"><i class="fas fa-search"></i></button>
                 </div>
-                
+
                 <div class="carrinho-container">
                     <a href="carrinho.html" class="btn-carrinho">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="contador-carrinho">0</span>
                     </a>
                 </div>
-                
+
                 <button class="btn-menu-mobile" id="btnMenuMobile">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
     </header>
-    
+
     <!-- Banner Hero -->
     <section class="banner">
         <div class="container">
@@ -61,11 +63,12 @@
                 <a href="#produtos" class="btn btn-primario">Ver Produtos</a>
             </div>
             <div class="imagem-banner">
-                <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Produtos de tecnologia">
+                <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Produtos de tecnologia">
             </div>
         </div>
     </section>
-    
+
     <!-- Categorias -->
     <section class="categorias">
         <div class="container">
@@ -78,7 +81,7 @@
                     <h3>Smartphones</h3>
                     <p>+50 produtos</p>
                 </a>
-                
+
                 <a href="#" class="cartao-categoria">
                     <div class="icone-categoria">
                         <i class="fas fa-laptop"></i>
@@ -86,7 +89,7 @@
                     <h3>Notebooks</h3>
                     <p>+30 produtos</p>
                 </a>
-                
+
                 <a href="#" class="cartao-categoria">
                     <div class="icone-categoria">
                         <i class="fas fa-headphones"></i>
@@ -94,7 +97,7 @@
                     <h3>Áudio</h3>
                     <p>+40 produtos</p>
                 </a>
-                
+
                 <a href="#" class="cartao-categoria">
                     <div class="icone-categoria">
                         <i class="fas fa-gamepad"></i>
@@ -102,7 +105,7 @@
                     <h3>Games</h3>
                     <p>+25 produtos</p>
                 </a>
-                
+
                 <a href="#" class="cartao-categoria">
                     <div class="icone-categoria">
                         <i class="fas fa-tv"></i>
@@ -113,7 +116,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Produtos em Destaque -->
     <section class="produtos" id="produtos">
         <div class="container">
@@ -135,17 +138,17 @@
                     </select>
                 </div>
             </div>
-            
+
             <div class="grid-produtos" id="gridProdutos">
                 <!-- Produtos serão carregados via JavaScript -->
             </div>
-            
+
             <div class="carregar-mais">
                 <button class="btn btn-secundario" id="carregarMais">Carregar Mais Produtos</button>
             </div>
         </div>
     </section>
-    
+
     <!-- Banner Promocional -->
     <section class="banner-promocional">
         <div class="container">
@@ -174,7 +177,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Rodapé -->
     <footer class="rodape">
         <div class="container">
@@ -192,7 +195,7 @@
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="coluna-rodape">
                     <h3>Links Rápidos</h3>
                     <ul>
@@ -202,7 +205,7 @@
                         <li><a href="#">Contato</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="coluna-rodape">
                     <h3>Ajuda</h3>
                     <ul>
@@ -212,7 +215,7 @@
                         <li><a href="#">Pagamento</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="coluna-rodape">
                     <h3>Contato</h3>
                     <ul>
@@ -222,9 +225,9 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="rodape-inferior">
-                <p>&copy; 2023 TechStore. Todos os direitos reservados.</p>
+                <p>© <span id="year"></span> TechStore. Todos os direitos reservados.</p>
                 <div class="pagamentos">
                     <i class="fab fa-cc-visa" title="Visa"></i>
                     <i class="fab fa-cc-mastercard" title="Mastercard"></i>
@@ -234,7 +237,8 @@
             </div>
         </div>
     </footer>
-    
+
     <script src="script.js"></script>
 </body>
+
 </html>

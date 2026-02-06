@@ -1319,4 +1319,6 @@ function iniciarContadorPromocao() {
     // Atualizar a cada segundo
     atualizarContador();
     setInterval(atualizarContador, 1000);
+    document.getElementById("year").textContent = new Date().getFullYear();
 }
+
