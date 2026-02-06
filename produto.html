@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto - TechStore</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>TechStore</span>
+                </a>
+            </div>
+            
+            <nav class="navegacao">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#produtos">Produtos</a></li>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </nav>
+            
+            <div class="acoes-cabecalho">
+                <button class="btn-icone" id="alternarTema" aria-label="Alternar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <div class="carrinho-container">
+                    <a href="carrinho.html" class="btn-carrinho">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="contador-carrinho">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Conteúdo do Produto -->
+    <main class="pagina-produto">
+        <div class="container">
+            <!-- Navegação de migalhas -->
+            <div class="migalhas">
+                <a href="index.html">Início</a> / 
+                <a href="index.html#produtos">Produtos</a> / 
+                <span id="categoriaProduto">Smartphones</span> / 
+                <span id="nomeProduto">Carregando...</span>
+            </div>
+            
+            <div class="detalhes-produto">
+                <!-- Galeria de Imagens -->
+                <div class="galeria-produto">
+                    <div class="imagem-principal">
+                        <img id="imagemPrincipal" src="" alt="Imagem do produto">
+                    </div>
+                    <div class="miniaturas" id="miniaturas">
+                        <!-- Miniaturas serão carregadas via JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Informações do Produto -->
+                <div class="info-produto">
+                    <h1 id="tituloProduto">Carregando...</h1>
+                    
+                    <div class="avaliacao">
+                        <div class="estrelas">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="nota">4.5</span>
+                        <span class="quantidade-avaliacoes">(128 avaliações)</span>
+                    </div>
+                    
+                    <div class="preco-container">
+                        <div class="preco-atual" id="precoAtual">R$ 0,00</div>
+                        <div class="preco-original" id="precoOriginal">R$ 0,00</div>
+                        <div class="desconto" id="desconto">0% OFF</div>
+                    </div>
+                    
+                    <div class="descricao" id="descricaoProduto">
+                        Carregando descrição do produto...
+                    </div>
+                    
+                    <div class="especificacoes">
+                        <h3>Especificações</h3>
+                        <ul id="especificacoesLista">
+                            <li>Carregando especificações...</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="acoes-produto">
+                        <div class="quantidade">
+                            <label for="quantidade">Quantidade:</label>
+                            <div class="contador-quantidade">
+                                <button class="btn-quantidade" id="diminuirQuantidade">-</button>
+                                <input type="number" id="quantidade" value="1" min="1" max="10">
+                                <button class="btn-quantidade" id="aumentarQuantidade">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="estoque">
+                            <i class="fas fa-check-circle"></i>
+                            <span id="estoqueDisponivel">Em estoque</span>
+                        </div>
+                        
+                        <div class="botoes-compra">
+                            <button class="btn btn-primario btn-grande" id="adicionarCarrinho">
+                                <i class="fas fa-shopping-cart"></i> Adicionar ao Carrinho
+                            </button>
+                            <button class="btn btn-secundario btn-grande" id="comprarAgora">
+                                <i class="fas fa-bolt"></i> Comprar Agora
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="entrega">
+                        <div class="info-entrega">
+                            <i class="fas fa-truck"></i>
+                            <div>
+                                <strong>Entrega Rápida</strong>
+                                <p>Receba em até 2 dias úteis para São Paulo e região</p>
+                            </div>
+                        </div>
+                        <div class="info-entrega">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <strong>Compra Segura</strong>
+                                <p>Seus dados estão protegidos com criptografia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Abas de Informações -->
+            <div class="abas-produto">
+                <div class="abas-nav">
+                    <button class="aba-link ativo" data-aba="descricao">Descrição</button>
+                    <button class="aba-link" data-aba="especificacoes">Especificações</button>
+                    <button class="aba-link" data-aba="avaliacoes">Avaliações</button>
+                </div>
+                
+                <div class="abas-conteudo">
+                    <div class="aba-conteudo ativo" id="descricao">
+                        <h3>Sobre este produto</h3>
+                        <p id="descricaoDetalhada">Carregando descrição detalhada...</p>
+                    </div>
+                    
+                    <div class="aba-conteudo" id="especificacoes">
+                        <h3>Especificações Técnicas</h3>
+                        <table class="tabela-especificacoes">
+                            <tbody id="tabelaEspecificacoes">
+                                <tr><td>Carregando...</td><td></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="aba-conteudo" id="avaliacoes">
+                        <h3>Avaliações dos Clientes</h3>
+                        <div class="resumo-avaliacoes">
+                            <div class="media-avaliacoes">
+                                <div class="nota-media">4.5</div>
+                                <div class="estrelas">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p>Baseado em 128 avaliações</p>
+                            </div>
+                            <div class="distribuicao-avaliacoes">
+                                <div class="barra-avaliacao">
+                                    <span>5 estrelas</span>
+                                    <div class="barra"><div class="preenchimento" style="width: 70%"></div></div>
+                                    <span>70%</span>
+                                </div>
+                                <div class="barra-avaliacao">
+                                    <span>4 estrelas</span>
+                                    <div class="barra"><div class="preenchimento" style="width: 20%"></div></div>
+                                    <span>20%</span>
+                                </div>
+                                <div class="barra-avaliacao">
+                                    <span>3 estrelas</span>
+                                    <div class="barra"><div class="preenchimento" style="width: 5%"></div></div>
+                                    <span>5%</span>
+                                </div>
+                                <div class="barra-avaliacao">
+                                    <span>2 estrelas</span>
+                                    <div class="barra"><div class="preenchimento" style="width: 3%"></div></div>
+                                    <span>3%</span>
+                                </div>
+                                <div class="barra-avaliacao">
+                                    <span>1 estrela</span>
+                                    <div class="barra"><div class="preenchimento" style="width: 2%"></div></div>
+                                    <span>2%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="lista-avaliacoes">
+                            <div class="avaliacao-item">
+                                <div class="cabecalho-avaliacao">
+                                    <div class="autor">
+                                        <strong>João Silva</strong>
+                                        <div class="estrelas">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <span class="data">15/10/2023</span>
+                                </div>
+                                <p>Produto excelente! Entrega rápida e produto de qualidade. Recomendo!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Produtos Relacionados -->
+            <section class="produtos-relacionados">
+                <h2 class="titulo-secao">Produtos Relacionados</h2>
+                <div class="grid-produtos" id="produtosRelacionados">
+                    <!-- Produtos relacionados serão carregados via JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="grid-rodape">
+                <div class="coluna-rodape">
+                    <div class="logo">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>TechStore</span>
+                    </div>
+                    <p>Sua loja de tecnologia preferida com os melhores preços e produtos.</p>
+                </div>
+                
+                <div class="coluna-rodape">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="index.html#produtos">Produtos</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="coluna-rodape">
+                    <h3>Ajuda</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Entrega</a></li>
+                        <li><a href="#">Devolução</a></li>
+                        <li><a href="#">Pagamento</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="rodape-inferior">
+                <p>&copy; 2023 TechStore. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

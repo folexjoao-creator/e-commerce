@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras - TechStore</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>TechStore</span>
+                </a>
+            </div>
+            
+            <nav class="navegacao">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#produtos">Produtos</a></li>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                </ul>
+            </nav>
+            
+            <div class="acoes-cabecalho">
+                <button class="btn-icone" id="alternarTema" aria-label="Alternar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <div class="carrinho-container">
+                    <a href="carrinho.html" class="btn-carrinho ativo">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="contador-carrinho">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Conteúdo do Carrinho -->
+    <main class="pagina-carrinho">
+        <div class="container">
+            <h1 class="titulo-pagina">Carrinho de Compras</h1>
+            
+            <div class="conteudo-carrinho">
+                <!-- Itens do Carrinho -->
+                <div class="secao-carrinho">
+                    <div class="cabecalho-carrinho">
+                        <h2>Seus Itens (<span id="quantidadeItens">0</span>)</h2>
+                        <button class="btn btn-texto" id="limparCarrinho">
+                            <i class="fas fa-trash"></i> Limpar Carrinho
+                        </button>
+                    </div>
+                    
+                    <div class="itens-carrinho" id="itensCarrinho">
+                        <!-- Itens serão carregados via JavaScript -->
+                        <div class="carrinho-vazio">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h3>Seu carrinho está vazio</h3>
+                            <p>Adicione produtos para ver os itens aqui</p>
+                            <a href="index.html" class="btn btn-primario">Continuar Comprando</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resumo do Pedido -->
+                <div class="resumo-pedido">
+                    <div class="cartao-resumo">
+                        <h2>Resumo do Pedido</h2>
+                        
+                        <div class="linha-resumo">
+                            <span>Subtotal</span>
+                            <span id="subtotal">R$ 0,00</span>
+                        </div>
+                        
+                        <div class="linha-resumo">
+                            <span>Frete</span>
+                            <div>
+                                <span id="frete">R$ 0,00</span>
+                                <small class="frete-gratis oculto" id="freteGratis">Parabéns! Frete grátis</small>
+                            </div>
+                        </div>
+                        
+                        <div class="linha-resumo cupom">
+                            <div>
+                                <i class="fas fa-tag"></i>
+                                <input type="text" id="codigoCupom" placeholder="Código do cupom">
+                            </div>
+                            <button class="btn btn-pequeno" id="aplicarCupom">Aplicar</button>
+                        </div>
+                        
+                        <div class="linha-resumo cupom-aplicado oculto" id="cupomAplicado">
+                            <span>Cupom aplicado: <strong id="cupomNome">BLACKFRIDAY</strong></span>
+                            <span>-<span id="descontoCupom">R$ 0,00</span></span>
+                        </div>
+                        
+                        <div class="linha-resumo total">
+                            <span><strong>Total</strong></span>
+                            <span><strong id="totalPedido">R$ 0,00</strong></span>
+                        </div>
+                        
+                        <div class="metodos-pagamento">
+                            <h3>Formas de Pagamento</h3>
+                            <div class="icones-pagamento">
+                                <i class="fab fa-cc-visa" title="Visa"></i>
+                                <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                                <i class="fab fa-cc-amex" title="American Express"></i>
+                                <i class="fab fa-cc-paypal" title="PayPal"></i>
+                                <i class="fas fa-barcode" title="Boleto"></i>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primario btn-grande" id="finalizarCompra">
+                            <i class="fas fa-lock"></i> Finalizar Compra
+                        </button>
+                        
+                        <p class="texto-seguranca">
+                            <i class="fas fa-shield-alt"></i>
+                            Compra 100% segura. Seus dados estão protegidos.
+                        </p>
+                    </div>
+                    
+                    <!-- Cupons Disponíveis -->
+                    <div class="cupons-disponiveis">
+                        <h3>Cupons Disponíveis</h3>
+                        <div class="lista-cupons">
+                            <div class="cupom-item">
+                                <div class="info-cupom">
+                                    <strong>BLACKFRIDAY</strong>
+                                    <p>15% de desconto em compras acima de R$ 500</p>
+                                </div>
+                                <button class="btn btn-pequeno" data-cupom="BLACKFRIDAY" data-desconto="15" data-minimo="500">
+                                    Aplicar
+                                </button>
+                            </div>
+                            <div class="cupom-item">
+                                <div class="info-cupom">
+                                    <strong>TECH10</strong>
+                                    <p>10% de desconto em toda a loja</p>
+                                </div>
+                                <button class="btn btn-pequeno" data-cupom="TECH10" data-desconto="10" data-minimo="0">
+                                    Aplicar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Produtos Recomendados -->
+            <section class="produtos-recomendados">
+                <h2>Você também pode gostar</h2>
+                <div class="grid-produtos" id="produtosRecomendados">
+                    <!-- Produtos recomendados serão carregados via JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="container">
+            <div class="grid-rodape">
+                <div class="coluna-rodape">
+                    <div class="logo">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>TechStore</span>
+                    </div>
+                    <p>Sua loja de tecnologia preferida com os melhores preços e produtos.</p>
+                </div>
+                
+                <div class="coluna-rodape">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="index.html#produtos">Produtos</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="coluna-rodape">
+                    <h3>Ajuda</h3>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Entrega</a></li>
+                        <li><a href="#">Devolução</a></li>
+                        <li><a href="#">Pagamento</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="rodape-inferior">
+                <p>&copy; 2023 TechStore. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
